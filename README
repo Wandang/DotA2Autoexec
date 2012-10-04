@@ -1,0 +1,24 @@
+This project is my first public project.
+Its shortform will be D2A
+
+It's goal is to simplify scripting for normal users via patterns.
+
+For example: D2A -add puck-orb q will add the necessary code to bind
+Ethereal Jaunt to the same button as Illusory Orb.
+
+This patterns can be added to the program by sending it to a developer who
+checks it first. I will try to develop the most common (or requested) myself.
+
+If the backend works i will try to develop a frontend GUI to make it even
+easier.
+
+Since i mainly program in java this project will be a pure javadevelopment.
+
+DotA2Autoexec by Wandang
+
+This work is free2use by anyone. Only 2 rules apply:
+Name the developer.
+Do not sell the work.
+
+(This will change after i read some stuff about creative commons and
+picking one of those.)
