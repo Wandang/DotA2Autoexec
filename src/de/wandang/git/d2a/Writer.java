@@ -7,12 +7,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Writer {
+
 	StringBuilder alles = new StringBuilder();
-	final String lines = "////////////////////";
+	D2A_Settings settings = new D2A_Settings();
+	D2A_Itembuilds itembuilds=new D2A_Itembuilds();
 
 	// Copies file1.txt to the steamfolder and renames it to autoexec.cfg
 	public void writeToFile() throws IOException {
-
+		// hole einstellungen aus dem settings Stringbuilder und schiebe
+		// Settings
+		//debug:
+		settings.addchangedSetting("Test1");
+		alles.append(settings.getD2A_Settings());
+		
+		System.out.println(alles.toString());
 	}// writeToFile()
 
 	/**
@@ -47,6 +55,7 @@ public class Writer {
 			out.close();
 
 		} catch (IOException e) {
+			System.out.println("IOException");
 		}
 	}
 
