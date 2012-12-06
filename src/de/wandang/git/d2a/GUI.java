@@ -1,6 +1,10 @@
 package de.wandang.git.d2a;
 
-
+/*
+ * Bilder werden aus Internet geladen, sollten lokal gespeichert werden,
+ * mit in jar Datei -> passende Bilder auswählen,
+ * evtl. Möglichkeit für eigene Bilder als Hintergrund?
+ */
 
 
 import java.awt.BorderLayout;
@@ -50,10 +54,10 @@ public class GUI extends JFrame
 	{
 		// create Frame
 		super("Settings");
-		setSize(500, 300);
+		setSize(800, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// create Labels
-		output = new JLabel("  ");
+		output = new JLabel("Settings");
 		output.setHorizontalAlignment(JLabel.CENTER);
 		output.setForeground(Color.white);
 		// create Panels
@@ -78,66 +82,24 @@ public class GUI extends JFrame
 	{
 		// create menu
 		JMenuBar menubar = new JMenuBar();
-		JMenu Spiel = new JMenu("Game");
-
+		JMenu Spiel = new JMenu("File");
 		JMenu edit = new JMenu("Edit");
 		JMenu options = new JMenu("Options");
 		JMenu help = new JMenu("Help");
 		// getActionCommand() sends the text of the JMenuItems
-		JMenuItem neuSpiel = new JMenuItem("new Game");
-		JMenuItem Undo = new JMenuItem("Undo");
-		JMenuItem Help = new JMenuItem("Help");
-		JMenuItem Redo = new JMenuItem("Redo");
-		JMenuItem About = new JMenuItem("About");
 		JMenuItem Exit = new JMenuItem("Exit");
-		JMenuItem size = new JMenuItem("custom size");
-		JMenuItem color = new JMenuItem("custom colour");
-		JMenuItem normal = new JMenuItem("normal mode");
-		JMenuItem hide = new JMenuItem("hide mode");
-		JMenuItem raster = new JMenuItem("Rastercolour");
 		edit.addSeparator();
 		// Menulistener
-		addMenuListener(neuSpiel);
-		addMenuListener(Undo);
-		addMenuListener(Help);
-		addMenuListener(About);
-		addMenuListener(Redo);
 		addMenuListener(Exit);
-		addMenuListener(size);
-		addMenuListener(color);
-		addMenuListener(normal);
-		addMenuListener(hide);
-		addMenuListener(raster);
 
-		// more Hotkeys
-		neuSpiel.setAccelerator(KeyStroke.getKeyStroke("F2"));
+		//Hotkeys
+		
 		Exit.setAccelerator(KeyStroke.getKeyStroke(
 				KeyEvent.VK_ESCAPE, 0));
-		Undo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z,
-				ActionEvent.CTRL_MASK));
-		Redo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Y,
-				ActionEvent.CTRL_MASK));
-		Help.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H,
-				ActionEvent.SHIFT_MASK));
-		size.setAccelerator(KeyStroke.getKeyStroke("F5"));
-		color.setAccelerator(KeyStroke.getKeyStroke("F6"));
-		raster.setAccelerator(KeyStroke.getKeyStroke("F7"));
+
+		
 		// get everything in the right menu
-		Spiel.add(neuSpiel);
-		Spiel.addSeparator();
-		Spiel.add(Undo);
-		Spiel.add(Redo);
-		Spiel.addSeparator();
 		Spiel.add(Exit);
-		edit.add(size);
-		edit.add(color);
-		edit.addSeparator();
-		options.add(raster);
-		options.addSeparator();
-		options.add(normal);
-		options.add(hide);
-		help.add(Help);
-		help.add(About);
 		menubar.add(Spiel);
 
 		menubar.add(edit);
@@ -174,10 +136,16 @@ public class GUI extends JFrame
 	 */
 	private void menuEingabe(String s)
 	{
-		if (s.equals("new Game"))
+		if (s.equals("Exit"))
 		{
-
+			this.dispose();
 		}
 	}
 
+	//zu testzwecken
+	public static void main(String[] args)
+	{
+		new GUI();
+	}
+	
 }

@@ -1,8 +1,6 @@
 package de.wandang.git.d2a;
 
-
-
-import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 
 /*
 
@@ -123,16 +121,32 @@ import javax.swing.JPanel;
 
  */
 
-public class Settingpanel extends JPanel
-{
+/**
+ * 
+ * @author Sinthowinto
+ * 
+ */
+public class Settingpanel extends JTabbedPane {
 
 	/**
 	 * default UID
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public Settingpanel()
-	{
+	// change to right stuff
+	final static String Panel1 = "Tab1";
+	final static String Panel2 = "Tab2";
+	final static String Panel3 = "Tab3";
+
+	public Settingpanel() {
+		// pics
+	//	Icon test = new ImageIcon("~/Pictures/test.jpg");
+
+
+		// Create the "tabs".
+		this.addTab(Panel1, new Tab1());
+		this.addTab(Panel2, new Tab2());
+		this.addTab(Panel3, new Tab3());
 
 	}
 
